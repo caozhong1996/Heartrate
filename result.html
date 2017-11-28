@@ -1,0 +1,261 @@
+<!--文档声明为 html（最新html5）-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--声明当前页面编码格式为国际编码（utf-8）还有一种中文编码（gbk/gb2312）-->
+    <meta charset="UTF-8">
+    <title>测试结果</title>
+    <!-- 申明IE浏览器需要用最新的渲染引擎来渲染当前的页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        视口 只有移动端才识别 申明了申明？
+        width 申明视口的宽度等于设备的宽度
+        initial-scale 申明的是 默认的初始缩放比 1：1 也就是等比显示在移动端
+        user-scalable 不允许用户自行缩放
+    -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="Keywords" content="关键词,关键词">
+    <!--对应于Content（网页内容），以便于搜索引擎机器人查找、分类。-->
+    <meta name="Description" content="描述">
+    <!--对应于Content（网页内容），以便于搜索引擎机器人查找、分类。-->
+    <!--<link rel="stylesheet" href="css/tong.css"/>-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+        /*
+        什么是媒体查询：
+媒体查询是向不同设备提供不同样式的一种方式，它为每种类型的用户提供了最佳的体验。
+作为CSS3规范的一部分，媒体查询扩展了media属性（控制您的样式应用方式）的角色。
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .head {
+            display: block;
+            padding-bottom: 3px;
+            border-bottom: 1px solid rgb(214, 214, 214);
+            background: rgb(255, 105, 105);
+            height:60px;
+            color:#fff;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .time {
+            margin-top: 3px;
+            display: block;
+            text-align: center;
+            color: gray;
+        }
+
+        .title {
+            text-align: center;
+            font-family: "微软雅黑";
+            font-size: 18px;
+            margin-top:.8em;
+        }
+
+        .heartRate {
+            background-color: rgb(254, 254, 254);
+            color: rgb(54, 54, 54);
+            display: block;
+            text-align: center;
+            font-family: "微软雅黑"；
+        }
+
+        .info-heartRate {
+            background-color: rgb(254, 254, 254);
+            margin-top: 40px;
+            font-family: "微软雅黑";
+            font-size: 10px;
+        }
+
+        .info-heartRate span {
+            font-size: 40px;
+            margin: 0px 10px;
+            color: rgb(130, 212, 31);
+        }
+
+        .progress-high {
+            display: block;
+            height: 5px;
+            width: 80%;
+            margin: auto;
+            margin-left: 10%;
+        }
+
+        .circle {
+            position: relative;
+            top: 7px;
+            display: block;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            margin-left: 10%;
+            border: 3px solid green;
+            /* 宽度和高度需要相等 */
+        }
+
+        .conclusion {
+            font-size: 10px;
+            color: gray;
+            text-align: center;
+            margin-top: 60px;
+            font-family: "微软雅黑";
+        }
+
+        .number {
+            margin: 0 10%;
+        }
+
+        .num1 {
+            margin-right: 0px;
+            font-size: 12px;
+            margin-left: 25%;
+            text-align: center;
+        }
+
+        .num2 {
+            margin-right: 0px;
+            font-size: 12px;
+            margin-left: 19%;
+            text-align: center;
+        }
+
+        .num3 {
+            margin-right: 0px;
+            font-size: 12px;
+            margin-left: 21%;
+            text-align: center;
+        }
+
+        .test {
+            display: inline-block;
+            font-family: "微软雅黑";
+            margin-bottom: 10px;
+            text-align: center;
+            width: 50%;
+        }
+        .conmon{
+
+          width:90%;
+          height:90px;
+          margin-left: 16px;
+
+
+        }
+        .conmon2{
+             width: 325px;
+             margin-top: 10px;
+             margin-left: 10px;
+        }
+        .conmon2 p{
+          position:relative;
+          top:2px;
+        }
+        .context{
+          margin-top: 3.5em;
+
+        }
+        .tong{
+          margin-left: 1em;
+          padding:.4em 2em;
+          width:40%;
+          border:0px;
+          background:rgb(209, 209, 209);
+          color:rgb(41, 41, 42);
+          }
+          .wancheng{
+            margin-left: 2em;
+          }
+    </style>
+</head>
+
+<body>
+  <div style="width:375px; width-min:320px; margin:0px auto 0px;" >
+    <div class="head">
+     HeartRate
+    </div>
+    <div class="heartRate">
+        <div class="info-heartRate">心率<span id="data2">85</span>BPM</div>
+    </div>
+    <div>
+        <span class="circle"></span>
+        <div class="progress progress-high">
+            <div class="progress-bar progress-bar-info" style="width:25%"></div>
+            <div class="progress-bar progress-bar-warning" style="width:25%"></div>
+            <div class="progress-bar progress-bar-success" style="width:25%"></div>
+            <div class="progress-bar progress-bar-danger" style="width:25%"></div>
+        </div>
+        <div class="number">
+            <span class="num1">40</span><span class="num2">80</span><span class="num3">120</span>
+        </div>
+        <div class="conclusion">您的心率在正常范围内，经常运动有助于保持健康。</div>
+  </div>
+  <div class="context">
+     <div class="conmon" style="border-left: 8px solid #5bc0de;">
+        <div class="conmon2">
+          <p>40-60:</p><span>心动较缓，如长期出现并伴有心悸、胸闷等症状，需及时咨询医生。</span>
+        </div>
+     </div>
+     <div class="conmon" style="border-left: 8px solid #5cb85c;">
+       <div class="conmon2">
+       <p>60-100:</p><span>心率正常，大多数为60-80次/分钟，女性稍快。</span>
+       </div>
+     </div>
+     <div class="conmon" style="border-left:8px solid #f0ad4e;">
+       <div class="conmon2">
+       <p>100-150:</p><span>心动过快，运动、体力劳动或兴奋、恐惧会造成心率加快。如长期出现并经历过眩晕等不适症状，请及时咨询医生。</span>
+       </div>
+     </div>
+     <div class="conmon" style="border-left:8px solid #d9534f">
+        <div class="conmon2">
+       <p>150以上:</p><span>心率过快，可能是病发性心律失常，需立即就医。</span>
+     </div>
+
+     </div>
+     <a id="save" class="btn tong">完成</a>
+     <a href="/hr_page" class="btn tong">再测一次</a>
+  </div>
+</div>
+</body>
+
+<script>
+       /*$(function(){
+         var data2,left;
+         $.ajax({
+           type: "GET",
+           url: '/result/get',
+           dataType: 'json',
+           // async: falses使ajax请求同步，当异步请求时，即javascript是非阻塞运行的，
+           //  在$.ajax还没运行完console。log可能就执行了，所以控制台会打印Undefined
+           async: false,
+           success: function(data) {
+               data2=data;
+           },
+           error: function(err) {
+             console.log(err);
+           }
+         });*/
+       $(function(){
+         var url=window.location.href,
+             bpm=url.split("=");
+             data2=bpm[1];
+             console.log(data2);
+         left=parseInt(data2*0.5)+9+"%";
+         console.log(parseInt(data2*0.5));
+         $("#data2").html(data2);
+         $(".circle").animate({marginLeft:left},1000);
+         $("#save").attr("href","/result/save?bpm="+data2);
+       });
+</script>
+
+</html>
