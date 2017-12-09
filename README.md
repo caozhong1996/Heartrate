@@ -1,6 +1,6 @@
-> ![image](https://github.com/caozhong1996/Heartrate/blob/master/show.gif)
-
 # Heartrate
+
+> ![image](https://github.com/caozhong1996/Heartrate/blob/master/show.gif)
 
 ## 操作流程
 > 打开HeartRate这个HTML页面
